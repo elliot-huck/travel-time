@@ -12,9 +12,7 @@ namespace TravelTime
         Bitcoin
     }
 
-    public class Hotel {
-        public string Name { get; set; }
-        public string Location { get; set; }
+    public class Hotel : Location {
         public double RoomPrice { get; set; }
         public int Rating { get; set; }
         public int MaximumOccupancy { get; set; }
