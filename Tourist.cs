@@ -17,9 +17,9 @@ namespace TravelTime
         }
 
         public void Travel(
-            Activity destination,
+            Location origin,
             Transportation transport,
-            Hotel origin)
+            Location destination)
         {
 
         }
