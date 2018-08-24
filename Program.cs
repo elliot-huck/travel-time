@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TravelTime
 {
@@ -48,7 +49,8 @@ namespace TravelTime
             hotelCalifornia.CheckIn(johnnyDepp, PaymentTypes.Cash);
             johnnyDepp.Spend(hotelCalifornia.RoomPrice);
 
-            hotelCalifornia.RegisterComplaint("NO rum at the bar!!!");
+            Dictionary<string, string> response = hotelCalifornia.RegisterComplaint("NO rum at the bar!!!");
+            Console.WriteLine(response["Feedback"]);
 
             zipLine.Register(
                 johnnyDepp,
@@ -62,6 +64,8 @@ namespace TravelTime
 
             johnnyDepp.Travel(zipLine, emilysCabs, hotelCalifornia);
             johnnyDepp.Spend(emilysCabs.Price);
+
+            Console.WriteLine($"{johnnyDepp.Name} has {johnnyDepp.Budget.ToString("C")} left to spend.");
         }
     }
 }
