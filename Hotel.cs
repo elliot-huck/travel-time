@@ -19,7 +19,6 @@ namespace TravelTime
 
         public string MakeReservation (
             Tourist guest,
-            PaymentTypes payment,
             DateTime checkIn,
             DateTime checkOut,
             int guestCount

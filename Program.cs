@@ -41,7 +41,6 @@ namespace TravelTime
 
             hotelCalifornia.MakeReservation(
                 johnnyDepp,
-                PaymentTypes.Cash,
                 DateTime.Now,
                 new DateTime(2018, 8, 30),
                 1);
