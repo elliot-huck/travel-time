@@ -30,19 +30,25 @@ namespace TravelTime
     }
 
     // Gets a random available room and reserves it under the tourist's name
-    public int MakeReservation(Tourist guest)
+    public void MakeReservation(Tourist guest)
     {
       List<Room> availableRooms =
       (from room in this.RoomList
        where room.Available
        select room).ToList();
+      Console.WriteLine($"There are {availableRooms.Count} rooms available");
+			if (availableRooms.Count == 0)
+			{
+					Console.WriteLine("Sorry!");
+					return;
+			}
 
       Random rand = new Random();
       int randomRoomIndex = rand.Next(availableRooms.Count);
       Room reservedRoom = availableRooms[randomRoomIndex];
       reservedRoom.Available = false;
       this.Reservations.Add(reservedRoom, guest);
-      return reservedRoom.Number;
+			Console.WriteLine($"{guest.Name} just reserved room #{reservedRoom.Number}");
     }
 
     public void CheckIn(Tourist guest)
@@ -53,6 +59,7 @@ namespace TravelTime
        select reservation).ToList()[0];
 
       this.Reservations.Remove(checkingIn.Key);
+
     }
 
     public void CheckOut(Tourist guest, int roomNumber)

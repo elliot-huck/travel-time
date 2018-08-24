@@ -18,8 +18,20 @@ namespace TravelTime
       Tourist johnnyDepp = new Tourist()
       {
         Name = "Johnny Depp",
-        Budget = 20000.00,
+        Budget = 1000.00,
       };
+
+			Tourist angieJolie = new Tourist()
+			{
+				Name = "Angelina Jolie",
+				Budget = 7000.00,
+			};
+
+			Tourist bradPitt = new Tourist()
+			{
+				Name = "Brad Pitt",
+				Budget = 9000.00,
+			};
 
       Activity zipLine = new Activity()
       {
@@ -43,15 +55,21 @@ namespace TravelTime
         Capacity = 3
       };
 
-      Hotel hotelCalifornia = new Hotel(3, 100.00, 80)
+      Hotel hotelCalifornia = new Hotel(3, 100.00, 2)
       {
         Name = "Hotel California",
       };
 
       hotelCalifornia.MakeReservation(johnnyDepp);
+			hotelCalifornia.MakeReservation(angieJolie);
 
       hotelCalifornia.CheckIn(johnnyDepp);
       johnnyDepp.Spend(hotelCalifornia.RoomPrice);
+
+			hotelCalifornia.CheckIn(angieJolie);
+			angieJolie.Spend(hotelCalifornia.RoomPrice);
+
+			hotelCalifornia.MakeReservation(bradPitt);
 
       Dictionary<string, string> response = hotelCalifornia.RegisterComplaint("NO rum at the bar!!!");
 
@@ -69,6 +87,8 @@ namespace TravelTime
       johnnyDepp.Spend(emilysCabs.Price);
 
       Console.WriteLine($"{johnnyDepp.Name} has {johnnyDepp.Budget.ToString("C")} left to spend.");
+      Console.WriteLine($"{angieJolie.Name} has {angieJolie.Budget.ToString("C")} left to spend.");
+      Console.WriteLine($"{angieJolie.Name} has {angieJolie.Budget.ToString("C")} left to spend.");
     }
   }
 }

@@ -27,8 +27,6 @@ namespace TravelTime
 
       int seatsRemaining = this.MaximumGuests - attendees.Count;
 
-
-
       if (guests + 1 > seatsRemaining)
       {
         return "There is not enough capacity at this moment. Please try again later.";
