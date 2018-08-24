@@ -1,27 +1,27 @@
 namespace TravelTime
 {
-    public class Tourist {
-        public string Name { get; set; }
-        public string CountryOrigin { get; set; }
-        public double Budget { get; set; }
+  public class Tourist
+  {
+    public string Name { get; set; }
+    public double Budget { get; set; }
 
-        public double Spend(double amount)
-        {
-            if (amount > this.Budget)
-            {
-                return this.Budget;
-            }
-            this.Budget -= amount;
+    public double Spend(double amount)
+    {
+      if (amount > this.Budget)
+      {
+        return this.Budget;
+      }
+      this.Budget -= amount;
 
-            return this.Budget;
-        }
-
-        public void Travel(
-            Location origin,
-            Transportation transport,
-            Location destination)
-        {
-
-        }
+      return this.Budget;
     }
+
+    public void Travel(
+        Location origin,
+        Transportation transport,
+        Location destination)
+    {
+
+    }
+  }
 }
