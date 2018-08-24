@@ -3,7 +3,6 @@ namespace TravelTime
   public class Tourist
   {
     public string Name { get; set; }
-    public string CountryOrigin { get; set; }
     public double Budget { get; set; }
 
     public double Spend(double amount)

@@ -18,8 +18,7 @@ namespace TravelTime
       Tourist johnnyDepp = new Tourist()
       {
         Name = "Johnny Depp",
-        CountryOrigin = "USA",
-        Budget = 20000.00
+        Budget = 20000.00,
       };
 
       Activity zipLine = new Activity()
@@ -49,17 +48,12 @@ namespace TravelTime
         Name = "Hotel California",
       };
 
-      hotelCalifornia.MakeReservation(
-          johnnyDepp,
-          DateTime.Now,
-          new DateTime(2018, 8, 30),
-          1);
+      hotelCalifornia.MakeReservation(johnnyDepp);
 
-      hotelCalifornia.CheckIn(johnnyDepp, PaymentTypes.Cash);
+      hotelCalifornia.CheckIn(johnnyDepp);
       johnnyDepp.Spend(hotelCalifornia.RoomPrice);
 
       Dictionary<string, string> response = hotelCalifornia.RegisterComplaint("NO rum at the bar!!!");
-      Console.WriteLine(response["Feedback"]);
 
       zipLine.Register(
           johnnyDepp,
